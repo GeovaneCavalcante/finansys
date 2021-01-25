@@ -48,7 +48,7 @@ export class CategoryService {
     const url = `${this.apiPath}/${id}`;
     return this.http.delete(url).pipe(
       catchError(this.handleError),
-      map(null)
+      map(() => null)
     )
   }
 
@@ -59,6 +59,7 @@ export class CategoryService {
   }
 
   private jsonDataToCategory(jsonData: any): Category {
+
     return jsonData as Category;
   }
 
